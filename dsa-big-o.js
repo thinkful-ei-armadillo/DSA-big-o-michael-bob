@@ -145,29 +145,152 @@ const rod_a = [7, 5, 3];
 //disk, starting, dest, midpoint
 
 
-function tower(arr) {
-  const rod_b = []; 
-  const rod_c = []; 
-  const rods = [arr, rod_b, rod_c];
-  //base case
-  if(rod_c[0] > rod_c[1] && rod_c[1] > rod_c[2]) {
-    return rods;
+// function tower(disk, source, temp, desc) {
+//   // const rod_b = []; 
+//   // const rod_c = []; 
+//   // const rods = [arr, rod_b, rod_c];
+
+
+//   //base case
+//   if(disk === 1) {
+//     return console.log(`${source} to ${desc}`);
+//   }
+  
+//   tower(disk -1, source, desc, temp);
+//   console.log(`${source} to ${desc}`);
+//   tower(disk - 1, temp, source, desc);
+//   // console.log(`${temp} to ${desc}`);
+//   //tower(disk, desc, source, temp);
+
+
+  
+
+// }
+
+// tower(3, 'a', 'b', 'c');
+
+
+//1. Counting Sheep(iterative)
+
+
+function countingSheep(num){
+
+  for(let i=0; i < num; i++){
+    console.log(`${num -i}, Another sheep jumped over the fence`); 
   }
-
-  if(rod_a[0][0] > rod_a[0][1] > rod_a[0][2] > rod_a[0][3])
-
+  console.log('All sheep jumped over the fence');
 
 }
 
+// Big O = Linear
+
+// countingSheep(5);
+
+
+function powerCalculator(base, exponent) {
+  if (exponent < 0){
+    return 'Exponent should be greater than or equal to 0';
+  }
+
+  
+  let result = base;
+
+  for (let i=1; i < exponent; i++){
+    result = result * base;
+  }
+
+  return result;
+}
+
+// Big O = linear
+
+
+function reverseString(str){
+  return str.split('').reverse().join('');
+
+  
+
+}
+
+// Big 0 = Constant or O(1)
+
+// console.log(reverseString('Hello'));
+
+
+function nthTriangle(num){
+  let sum = num;
+  for(let i= 1; i < num; i++){
+    sum+=i;
+  }
+
+  return sum;
+
+}
+
+// Big O = Linear
+
+// console.log(nthTriangle(5));
+
+function fibonacci(num){
+  let result = [];
+  for (let i = 1; i <= num; i++) {
+    if (i === 1) {
+      result.push(1);
+    
+    }
+    else if (i === 2) {
+      result.push(1);
+    }
+    else {
+      result.push(result[i - 2] + result[i - 3]);
+    }
+  }
+  return result.join(',');
+
+}
+
+//Big O is Linear;
+
+// console.log(fibonacci(7));
+
+function factorial(num){
+  let result = num;
+  for (let i = 1; i < num; i++){
+    result = result * i;
+  }
+
+  return result;
+}
+
+//Big O is Linear
+
+// console.log(factorial(5));
 
 
 
-/*
-tower(rod_a)
+//1. Sheep Recursive -- Linear
 
-rod a = []
-rod b = []
-rob c = [7,5,3]
+//2 PowerCalculator -- Linear
 
-*/
+//3. ReverseString -- Linear
+
+//4. nthTriangle(Recursive) -- Linear
+
+//5. stringSplitter(Recursive) -- Linear
+
+//6.  Fibonacci(recursive) -- Linear
+
+//7.  Factorial(recursive) -- Linear
+
+//8.  Maze(recursive) --- Linear
+
+//9. Maze(recursive) -- Polynomial
+
+//10. Anagrams(recursive) -- Polynomial
+
+//11.  Organization Chart -- Logarithmic
+
+//12. BinaryRep -- Logarithmic
+
+
 
